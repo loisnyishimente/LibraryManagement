@@ -6,6 +6,6 @@
 </head>
 <body>
 <h1>There was an error creating the location.</h1>
-<a href="LocationManagement.jsp">Try Again</a>
+<a href="registerLocation.jsp">Try Again</a>
 </body>
 </html>

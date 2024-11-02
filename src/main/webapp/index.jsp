@@ -9,8 +9,8 @@
 <h1>Welcome to the Library Management System</h1>
 <nav>
     <ul>
-        <li><a href="Views/LocationManagement.jsp">Manage Locations</a></li>
-        <li><a href="Views/Register.jsp">Registration</a></li>
+        <li><a href="Views/registerLocation.jsp">Manage Locations</a></li>
+        <li><a href="Views/registerUser.jsp">Registration</a></li>
         <li><a href="Views/Login.jsp">Login</a></li>
         <li><a href="Views/books.jsp">Manage Books</a></li>
         <li><a href="Views/borrow.jsp">Borrow Books</a></li>

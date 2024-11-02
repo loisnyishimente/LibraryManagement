@@ -4,54 +4,32 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class User extends Person {
-    private String username;
+    private String userName; // Renamed from name to userName for clarity
     private String password; // Storing hashed password
     private String role;
-    private Membership membership; // Changed to use Membership enum
-    private int borrowedBooks;
-    private int fine;
+    private String villageId; // New field for village ID
+  // Assuming you still want to keep this
 
-    public User(String phone, String username, String password, Membership membership1, String role, Membership membership) {
-        super(phone);
-        this.username = username;
+
+    public User(String userName, String password, String role, String villageId ) {
+        super(villageId); // Assuming villageId is passed to the Person class
+        this.userName = userName;
         setPassword(password); // Hash password upon creation
         this.role = role;
-        this.membership = membership; // Set membership
-        this.borrowedBooks = 0;
-        this.fine = 0;
+        this.role = villageId;
+    // Initialize borrowedBooks to 0
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     public String getRole() {
         return role;
     }
 
-    public Membership getMembership() {
-        return membership; // Return the Membership enum
-    }
 
-    public int getBorrowedBooks() {
-        return borrowedBooks;
-    }
 
-    public int getFine() {
-        return fine;
-    }
-
-    public void setFine(int fine) {
-        this.fine = fine;
-    }
-
-    public void incrementBorrowedBooks() {
-        this.borrowedBooks++;
-    }
-
-    public void decrementBorrowedBooks() {
-        this.borrowedBooks--;
-    }
 
     private void setPassword(String password) {
         this.password = hashPassword(password); // Hashing the password
@@ -76,9 +54,5 @@ public class User extends Person {
         }
     }
 
-    public String getPassword() {
-        return null;
-    }
 
-    // Removed getPassword method since it's not necessary and exposes sensitive data
 }

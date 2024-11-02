@@ -9,11 +9,13 @@ public class UserService {
         this.userDao = userDao;
     }
 
-    public void registerUser(String phone, String username, String email, String membershipType) throws Exception {
-        // Add registration logic, e.g., check for existing users and save new user
-        if (userDao.existsByEmail(email)) {
-            throw new Exception("Email already registered.");
+    public void registerUser(String userName, String password, String role, String villageId) throws Exception {
+        // Check if the username is already taken
+        if (userDao.existsByName(userName)) {
+            throw new Exception("Username already taken.");
         }
-        userDao.saveUser(phone, username, email, membershipType);
+
+        // Save the new user with all required fields
+        userDao.saveUser(userName, password, role, villageId);
     }
 }

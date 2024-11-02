@@ -1,27 +1,15 @@
 package services;
 
+import dao.LocationDao;
 import model.Location;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LocationService {
-    private List<Location> locations = new ArrayList<>();
+    private LocationDao locationDao;
 
-    public void addLocation(Location location) {
-        locations.add(location);
+    public LocationService(LocationDao locationDao) {
+        this.locationDao = locationDao;
     }
 
-    public String getLocationByProvince(String province) {
-        for (Location location : locations) {
-            if (location.getProvince().equalsIgnoreCase(province)) {
-                return location.getProvince();
-            }
-        }
-        return null;
-    }
-
-    public Object saveLocation(Location location) {
-        return null;
+    public void registerLocation(Location location) {
     }
 }

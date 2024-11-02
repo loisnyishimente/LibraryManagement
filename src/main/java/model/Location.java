@@ -1,21 +1,57 @@
 package model;
 
 public class Location {
-    private String province;
-    private String district;
-    private String sector;
-    private String cell;
-    private String village;
+    private String locationCode;
+    private String locationName;
+    private String locationType;
+    private Integer parentId; // Use Integer to allow null values
 
-    public Location(String province, String district, String sector, String cell, String village) {
-        this.province = province;
-        this.district = district;
-        this.sector = sector;
-        this.cell = cell;
-        this.village = village;
+    // Constructor for parent location
+    public Location(String locationCode, String locationName, String locationType) {
+        this.locationCode = locationCode;
+        this.locationName = locationName;
+        this.locationType = locationType;
+        this.parentId = null; // No parent for top-level locations
     }
 
-    public String getProvince() {
-        return province;
+    // Constructor for child location
+    public Location(String locationCode, String locationName, String locationType, Integer parentId) {
+        this.locationCode = locationCode;
+        this.locationName = locationName;
+        this.locationType = locationType;
+        this.parentId = parentId;
+    }
+
+    // Getters and Setters
+    public String getLocationCode() {
+        return locationCode;
+    }
+
+    public void setLocationCode(String locationCode) {
+        this.locationCode = locationCode;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+
+    public String getLocationType() {
+        return locationType;
+    }
+
+    public void setLocationType(String locationType) {
+        this.locationType = locationType;
+    }
+
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 }
